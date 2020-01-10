@@ -15,7 +15,8 @@ config :chat, ChatWeb.Endpoint,
   url: [scheme: "https", host: "secure-beach-05238.herokuapp.com", port: 443],
   force_ssl: [rewrite_on: [:x_forwarded_proto]],
   cache_static_manifest: "priv/static/cache_manifest.json",
-  secret_key_base: Map.fetch!(System.get_env(), "SECRET_KEY_BASE")
+  secret_key_base = "SampleSuperSecretKeyBase"
+#secret_key_base = System.fetch_env!("SECRET_KEY_BASE")
 
 # Configure your database
 config :chat, Chat.Repo,
